@@ -40,8 +40,8 @@ class StatusController extends Controller
 
         try {
             $model = Status::create([
-                'Name' => $data['IataCode'],
-                'Description' => $data['Airportname'],
+                'Name' => $data['Name'],
+                'Description' => $data['Description'],
             ]);
         } catch (QueryException $e) {
 
