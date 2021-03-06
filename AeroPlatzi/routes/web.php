@@ -16,3 +16,49 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/flights', ['uses' => 'FligthsController@ShowAll']);
+//Airport crud
+$router->get('/api/airport', ['uses' => 'AirportsController@index']);
+$router->get('/api/airport/{id}', ['uses' => 'AirportsController@show']);
+$router->post('/api/airport', ['uses' => 'AirportsController@store']);
+$router->put('/api/airport/{id}', ['uses' => 'AirportsController@update']);
+$router->delete('/api/airport/{id}', ['uses' => 'AirportsController@delete']);
+//Routes
+$router->get('/api/route', ['uses' => 'RoutesController@index']);
+$router->get('/api/route/{id}', ['uses' => 'StatusController@show']);
+$router->post('/api/route', ['uses' => 'StatusController@store']);
+$router->put('/api/route/{id}', ['uses' => 'StatusController@update']);
+$router->delete('/api/route/{id}', ['uses' => 'StatusController@delete']);
+//Status
+$router->get('/api/status', ['uses' => 'StatusController@index']);
+$router->get('/api/status/{id}', ['uses' => 'StatusController@show']);
+$router->post('/api/status', ['uses' => 'StatusController@store']);
+$router->put('/api/status/{id}', ['uses' => 'StatusController@update']);
+$router->delete('/api/status/{id}', ['uses' => 'StatusController@delete']);
+//fligth
+$router->get('/api/flight', ['uses' => 'FlightsController@index']);
+$router->get('/api/flight/{id}', ['uses' => 'FlightsController@show']);
+$router->post('/api/flight', ['uses' => 'FlightsController@store']);
+$router->put('/api/flight/{id}', ['uses' => 'FlightsController@update']);
+$router->delete('/api/flight/{id}', ['uses' => 'FlightsController@delete']);
+//Booking
+$router->get('/api/booking', ['uses' => 'BookingController@index']);
+$router->get('/api/booking/{id}', ['uses' => 'BookingController@show']);
+$router->post('/api/booking', ['uses' => 'BookingController@store']);
+$router->put('/api/booking/{id}', ['uses' => 'BookingController@@update']);
+$router->delete('/api/booking/{id}', ['uses' => 'BookingController@delete']);
+
+
+
+
+
+/**
+ * Endpoints
+ * User, Fligth, AirPort, Status, Routes,booking (CRUD)
+ * listar vuelos por status 
+ * rutas y tiempos con mas traficos 
+ * menos frecuentes en 8  horas
+ * cuantos usuarios han viajado los ultimos 7 dias 
+ */
+

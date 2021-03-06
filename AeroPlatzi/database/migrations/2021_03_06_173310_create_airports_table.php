@@ -17,7 +17,6 @@ class CreateAirportsTable extends Migration
             $table->id('IDAirport');
             $table->string('IataCode',15)->nullable(false);
             $table->string('Airportname',100);
-            $table->timestamps();
         });
     }
 
