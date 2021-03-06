@@ -10,7 +10,7 @@ class Route extends Model
     protected $primaryKey = 'IDRoute';
 
     protected $fillable = [
-        'IDDepartured', 'IDArrived', 'name',
+        'IDDepartured', 'IDArrieved', 'Name',
     ];
 
     protected $hidden = [];
