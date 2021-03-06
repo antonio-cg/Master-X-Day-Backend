@@ -49,6 +49,8 @@ $router->post('/api/booking', ['uses' => 'BookingController@store']);
 $router->put('/api/booking/{id}', ['uses' => 'BookingController@@update']);
 $router->delete('/api/booking/{id}', ['uses' => 'BookingController@delete']);
 
+//Custom Query
+$router->get('/api/lastsevendays', ['uses' => 'CustomQueryController@LastSevenDays']);
 
 
 
