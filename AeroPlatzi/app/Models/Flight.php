@@ -3,7 +3,7 @@
 namespace app\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Fligth extends Model{
+class Flight extends Model{
     public $timestamps = false;
     protected $fillable = [
         'IDRoute','IDStatus','ArrievedTime','DeparturedTime','BordingGate','PassengerNumber',

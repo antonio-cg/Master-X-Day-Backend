@@ -37,11 +37,11 @@ $router->post('/api/status', ['uses' => 'StatusController@store']);
 $router->put('/api/status/{id}', ['uses' => 'StatusController@update']);
 $router->delete('/api/status/{id}', ['uses' => 'StatusController@delete']);
 //fligth
-$router->get('/api/flight', ['uses' => 'FlightsController@index']);
-$router->get('/api/flight/{id}', ['uses' => 'FlightsController@show']);
-$router->post('/api/flight', ['uses' => 'FlightsController@store']);
-$router->put('/api/flight/{id}', ['uses' => 'FlightsController@update']);
-$router->delete('/api/flight/{id}', ['uses' => 'FlightsController@delete']);
+$router->get('/api/flight', ['uses' => 'FlightController@index']);
+$router->get('/api/flight/{id}', ['uses' => 'FlightController@show']);
+$router->post('/api/flight', ['uses' => 'FlightController@store']);
+$router->put('/api/flight/{id}', ['uses' => 'FlightController@update']);
+$router->delete('/api/flight/{id}', ['uses' => 'FlightController@delete']);
 //Booking
 $router->get('/api/booking', ['uses' => 'BookingController@index']);
 $router->get('/api/booking/{id}', ['uses' => 'BookingController@show']);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fligth;
+use App\Models\Flight;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class FlightController extends Controller
 
     public function index(Request $req)
     {
-        $fligth = Fligth::all();
+        $fligth = Flight::all();
         return $fligth;
     }
 
@@ -42,7 +42,7 @@ class FlightController extends Controller
         }
         $data = $req->json()->all();
         try {
-            $model = Fligth::create([
+            $model = Flight::create([
                 'IDRoute' => $data['IDRoute'],
                 'IDStatus' => $data['IDStatus'],
                 'ArrievedTime' => $data['ArrievedTime'],
@@ -60,7 +60,7 @@ class FlightController extends Controller
 
     public function delete($id)
     {
-        $data = Fligth::where('IDAirport', $id)->first();
+        $data = Flight::where('IDAirport', $id)->first();
         if ($data !== null) {
             $data->delete();
             return response()->json([], 200);
@@ -73,7 +73,7 @@ class FlightController extends Controller
 
     public function show($id)
     {
-        $data = Fligth::where('IDAirport', $id)->get();
+        $data = Flight::where('IDAirport', $id)->get();
 
         if (count($data) > 0) {
             return response()->json($data, 200);
@@ -90,7 +90,7 @@ class FlightController extends Controller
     {
         $model = null;
         try {
-            $model = Fligth::findOrFail($id);
+            $model = Flight::findOrFail($id);
         } catch (ModelNotFoundException $e) {
             return response()->json([], 404, []);
         }
