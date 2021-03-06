@@ -45,7 +45,7 @@ class RoutesController extends Controller
         try {
             $model = Route::create([
                 'IDDepartured' => $data['IDDepartured'],
-                'IDArrieved' => $data['IDArrieved'],
+                'IDArrived' => $data['IDArrieved'],
                 'Name' => $data['Name'],
             ]);
         } catch (QueryException $e) {
