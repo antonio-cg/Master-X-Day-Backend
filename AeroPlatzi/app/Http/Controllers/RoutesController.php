@@ -6,6 +6,7 @@ use App\Models\Route;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class RoutesController extends Controller
@@ -29,10 +30,11 @@ class RoutesController extends Controller
     public function store(Request $req)
     {
 
+        Log::info($req);
         $validator = Validator::make($req->all(), [
             'IDDepartured' => 'required',
             'IDArrieved' => 'required',
-            'Name' => 'name'
+            'Name' => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => 'data invalid'], 400, []);
@@ -42,7 +44,7 @@ class RoutesController extends Controller
 
         try {
             $model = Route::create([
-                'IDDepartured' => $data['IDDEpartured'],
+                'IDDepartured' => $data['IDDepartured'],
                 'IDArrieved' => $data['IDArrieved'],
                 'Name' => $data['Name'],
             ]);

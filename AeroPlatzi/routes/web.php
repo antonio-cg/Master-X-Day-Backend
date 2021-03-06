@@ -26,10 +26,10 @@ $router->put('/api/airport/{id}', ['uses' => 'AirportsController@update']);
 $router->delete('/api/airport/{id}', ['uses' => 'AirportsController@delete']);
 //Routes
 $router->get('/api/route', ['uses' => 'RoutesController@index']);
-$router->get('/api/route/{id}', ['uses' => 'StatusController@show']);
-$router->post('/api/route', ['uses' => 'StatusController@store']);
-$router->put('/api/route/{id}', ['uses' => 'StatusController@update']);
-$router->delete('/api/route/{id}', ['uses' => 'StatusController@delete']);
+$router->get('/api/route/{id}', ['uses' => 'RoutesController@show']);
+$router->post('/api/route', ['uses' => 'RoutesController@store']);
+$router->put('/api/route/{id}', ['uses' => 'RoutesController@update']);
+$router->delete('/api/route/{id}', ['uses' => 'RoutesController@delete']);
 //Status
 $router->get('/api/status', ['uses' => 'StatusController@index']);
 $router->get('/api/status/{id}', ['uses' => 'StatusController@show']);
