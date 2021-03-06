@@ -37,7 +37,8 @@ class FlightController extends Controller
             'PassengerNumber' => 'required',
         ]);
         if ($validator->fails()) {
-            return response()->json(['error' => 'data invalid'], 401, []);
+            return response()->json(['error' => 'data invalid'], 400, []);
+
         }
         $data = $req->json()->all();
         try {

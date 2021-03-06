@@ -32,19 +32,19 @@ class RoutesController extends Controller
         $validator = Validator::make($req->all(), [
             'IDDepartured' => 'required',
             'IDArrieved' => 'required',
-            'name' => 'name'
+            'Name' => 'name'
         ]);
         if ($validator->fails()) {
-            return response()->json(['error' => 'data invalid'], 401, []);
+            return response()->json(['error' => 'data invalid'], 400, []);
         }
 
         $data = $req->json()->all();
 
         try {
             $model = Route::create([
-                'IDDepartured' => $data['IataCode'],
-                'IDArrieved' => $data['Airportname'],
-                'name' => $data['Airportname'],
+                'IDDepartured' => $data['IDDEpartured'],
+                'IDArrieved' => $data['IDArrieved'],
+                'Name' => $data['Name'],
             ]);
         } catch (QueryException $e) {
 
