@@ -48,7 +48,7 @@ class CustomQueryController extends Controller
             ON  routes.IDRoute = flights.IDRoute 
             WHERE NOW() - INTERVAL 8 HOUR
             GROUP BY routes.Name
-            ORDER BY COUNT(Route) desc
+            ORDER BY COUNT(Route) ASC
             LIMIT 10"));
         return $data;
     }
